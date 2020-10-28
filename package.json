@@ -1,0 +1,21 @@
+{
+  "name": "jps-animations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.3.0",
+    "webpack-cli": "^4.1.0"
+  },
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "author": "JPBelley",
+  "license": "ISC"
+}

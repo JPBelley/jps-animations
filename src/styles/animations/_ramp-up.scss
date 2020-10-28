@@ -1,0 +1,99 @@
+[data-JPs="ramp-up"] {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  overflow: hidden;
+
+  @media (min-width: $mq-medium) {
+    font-size: 4rem;
+  }
+  
+  span {
+    letter-spacing: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition-timing-function: ease-out;
+    transform: translate3d(-30%, calc(110% + 20px), 0);
+    
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: 0px;
+    opacity: 0;
+    animation-timing-function: ease-out;
+    height: 0;
+  }
+   
+  &::before {
+    left: 100%;
+    top: 0px;
+    border-top: 4px solid currentColor; 
+  }
+   
+  &::after {
+    right: 0;
+    bottom: 0px;
+    border-bottom: 4px solid currentColor;
+  }
+
+  // When animation happens
+  &.JPs-onload span,
+  &.JPs-animate span {
+    animation-name: rampUp;
+  }
+
+  &.JPs-onload::before,
+  &.JPs-animate::before {
+    animation: upperLine 0.8s 0.8s forwards;
+  }
+
+  &.JPs-onload::after,
+  &.JPs-animate::after {
+    animation: lowerLine 0.8s 0.8s forwards;
+  }
+}
+
+@keyframes rampUp {
+  0% {
+    transform: translate3d(-30%, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes upperLine {
+  0% {
+    width: 0px;
+    left: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 25%;
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes lowerLine {
+  0% {
+    width: 0px;
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 25%;
+    right: 0%;
+    opacity: 1;
+  }
+}

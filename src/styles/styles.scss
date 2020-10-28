@@ -1,0 +1,13 @@
+// General and shared
+@import 'general/variables';
+@import 'general/common';
+@import 'general/buttons';
+
+// Section for display website
+@import 'sections/hero';
+@import 'sections/animations-section';
+@import 'sections/footer';
+
+// For a specific animation
+@import 'animations/ramp-up';
+@import 'animations/slide-in-left';

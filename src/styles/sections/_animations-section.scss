@@ -1,0 +1,47 @@
+.single-animation {
+	margin: 75px 0;
+
+	@media (min-width: $mq-medium) {
+		margin: 150px 0;
+	}
+}
+
+.single-animation-display {
+	display: flex;
+	justify-content: center;
+	padding: 100px 0;
+	position: relative;
+
+	@media (min-width: $mq-medium) {
+		padding: 150px 0;
+	}
+
+	.single-animation:nth-child(4n + 1) & {
+		background-color: $yellow;
+	} 
+
+	.single-animation:nth-child(4n + 2) & {
+		background-color: $red;
+	} 
+
+	.single-animation:nth-child(4n + 3) & {
+		background-color: $green;
+	} 
+
+	.single-animation:nth-child(4n) & {
+		background-color: $orange;
+	}
+
+	.button {
+		position: absolute;
+		bottom: 20px;
+	}
+
+	[data-button="animate"] {
+		left: 20px;
+	}
+
+	[data-button="reset"] {
+		right: 20px;
+	}
+}
