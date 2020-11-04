@@ -28,3 +28,14 @@ h3 {
 		font-size: 2rem;
 	}
 }
+
+svg {
+	fill: $white;
+	transition: .3s ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			fill: #000;
+		}
+	}
+}
