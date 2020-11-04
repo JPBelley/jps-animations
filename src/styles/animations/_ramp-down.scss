@@ -66,9 +66,11 @@
 @keyframes rampDown {
   0% {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
   100% {
     transform: translate3d(30%, 100%, 0);
+    opacity: 0;
   }
 }
 
