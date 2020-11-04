@@ -22,6 +22,7 @@ h3 {
 	color: $white;
 	padding-bottom: 4px;
 	border-bottom: 2px solid currentColor;
+	margin: 1.2rem 0;
 
 	@media (min-width: $mq-medium) {
 		font-size: 2rem;

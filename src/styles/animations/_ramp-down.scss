@@ -1,4 +1,4 @@
-[data-JPs="ramp-up"] {
+[data-JPs="ramp-down"] {
   display: inline-block;
   position: relative;
   font-size: 1.5rem;
@@ -19,8 +19,6 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     transition-timing-function: ease-out;
-    transform: translate3d(-30%, calc(110% + 20px), 0);
-
   }
 
   &::after,
@@ -28,72 +26,74 @@
     content: "";
     position: absolute;
     background-color: transparent;
-    width: 0px;
-    opacity: 0;
-    animation-timing-function: ease-out;
-    height: 0;
+    opacity: 1;
+    animation-timing-function: ease-in-out;
   }
    
   &::before {
-    left: 100%;
+    width: 25%;
     top: 0px;
+    left: 0%;
+    opacity: 1;
     border-top: 4px solid currentColor; 
   }
    
   &::after {
-    right: 0;
-    bottom: 0px;
+    width: 25%;
+		right: 0%;
+		bottom: 0;
+    opacity: 1;
     border-bottom: 4px solid currentColor;
   }
 
   // When animation happens
   &.JPs-onload span,
   &.JPs-animate span {
-    animation-name: rampUp;
+    animation-name: rampDown;
   }
 
   &.JPs-onload::before,
   &.JPs-animate::before {
-    animation: upperLine 0.8s 0.8s forwards;
+    animation: upperLineOut 0.8s 0.8s forwards;
   }
 
   &.JPs-onload::after,
   &.JPs-animate::after {
-    animation: lowerLine 0.8s 0.8s forwards;
+    animation: lowerLineOut 0.8s 0.8s forwards;
   }
 }
 
-@keyframes rampUp {
+@keyframes rampDown {
   0% {
-    transform: translate3d(-30%, 100%, 0);
-  }
-  100% {
     transform: translate3d(0, 0, 0);
   }
+  100% {
+    transform: translate3d(30%, 100%, 0);
+  }
 }
 
-@keyframes upperLine {
+@keyframes upperLineOut {
   0% {
+    width: 25%;
+    left: 0%;
+    opacity: 1;
+	}
+	100% {
     width: 0px;
     left: 100%;
     opacity: 0;
   }
-  100% {
-    width: 25%;
-    left: 0%;
-    opacity: 1;
-  }
 }
 
-@keyframes lowerLine {
+@keyframes lowerLineOut {
   0% {
-    width: 0px;
-    right: 100%;
-    opacity: 0;
-  }
-  100% {
     width: 25%;
     right: 0%;
     opacity: 1;
+	}
+	100% {
+    width: 0px;
+    right: 100%;
+    opacity: 0;
   }
 }
